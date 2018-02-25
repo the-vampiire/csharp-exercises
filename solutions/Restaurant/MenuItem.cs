@@ -3,7 +3,8 @@ using System.Linq;
 
 namespace Restaurant {
     public class MenuItem {
-    // private
+        // private
+        private int id;
         private string name;
         private string description;
         private double price;
@@ -14,6 +15,11 @@ namespace Restaurant {
         { "appetizer", "main course", "dessert" };
 
     // public
+        public int Id {
+            get => id;
+            set => id = value;
+        }
+
         public string Name {
             get => name;
             set => name = value;
@@ -32,6 +38,20 @@ namespace Restaurant {
         public string Category {
             get => category;
             set {
+                /**
+                 * 
+                 * the case where value IS in the categories array
+                     * categories.Contains(value) ->
+                     * return true -> flipped by ! negating operator -> if (false)
+                     * false so it skips the throw error block and enters the else
+                     * where the value is assigned
+                 * 
+                 * the case where value IS NOT in the categories array
+                     * categories.Contains(value) ->
+                     * return false -> flipped by ! negating operator -> if (true)
+                     * true so it enter the throw error block and throws an error
+                 * 
+                 **/
                 if (!categories.Contains(value))
                     throw new Exception("Invalid category");
                 else category = value;

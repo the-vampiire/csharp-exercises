@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Restaurant {
     class Menu {
@@ -73,6 +72,7 @@ namespace Restaurant {
         }
 
     // constructors
+        // overloading the constructor method
         public Menu() {
             
         }
