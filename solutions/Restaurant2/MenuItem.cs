@@ -8,3 +8,15 @@ namespace Restaurant2
         }
     }
 }
+
+/*
+ * Menu Items
+ *
+ * Properties
+ * name, description, price, newitem, category
+ * a way to print a menu item
+ * override the ToString method
+*
+* Methods
+* constructor
+*/

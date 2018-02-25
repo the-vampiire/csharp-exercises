@@ -19,13 +19,12 @@ namespace Restaurant {
         public string UpdatedAt {
             get => updatedAt;
             set => updatedAt = value;
-
         }
 
         public void AddItem(MenuItem menuItem) {
-            foreach (MenuItem item in Items) item.NewItem = false;
+            //foreach (MenuItem item in Items) item.NewItem = false;
             Items.Add(menuItem);
-            this.SetUpdateDate();
+            //this.SetUpdateDate();
         }
 
         public void RemoveItem(string name) {

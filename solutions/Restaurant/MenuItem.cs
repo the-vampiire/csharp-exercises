@@ -27,14 +27,33 @@ namespace Restaurant {
 
         public string Description {
             get => description;
-            set => description = value;
+            //set => description = value;
+
+            set {
+                // we want to update the New Item boolean when description is updated
+                NewItem = true;
+                description = value;
+            }
         }
+
+        /*
+
+        menuitem = instance of a MenuItem class
+
+        menuitem.Description = "some new description that we are updating"
+            it will first go through the setter method [set] of the Description property
+            when it enters the setter method it will update the NewItem property and set it to true
+            
+        */
 
         public double Price {
             get => price;
             set => price = value;
         }
 
+        // if we had exposed a plain field we lose the validation of getters and setters
+        //public string Category;
+        // menuItemInstance.Category = any value you want with no validation
         public string Category {
             get => category;
             set {
@@ -65,11 +84,12 @@ namespace Restaurant {
 
     // constructor
         public MenuItem(
-            string name,
+            string inputName,
             string description,
             string category,
             double price
         ) {
+            name = inputName; // this is assigning a value DIRECTLY to a field
             Name = name;
             Description = description;
             Category = category;
