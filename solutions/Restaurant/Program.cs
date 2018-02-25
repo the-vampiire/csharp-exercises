@@ -6,10 +6,18 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
-            MenuItem Pizza = new MenuItem(
+            // Instantiating (creating) instances of the MenuItem class
+            MenuItem Pizza1 = new MenuItem(
                "California Pizza Kitchen BBQ Chicken",
                "I was hungry when I wrote this",
-               "main",
+               "main course",
+               16.96
+           );
+
+            MenuItem Pizza2 = new MenuItem(
+               "California Pizza Kitchen BBQ Chicken",
+               "I was hungry when I wrote this",
+               "main course",
                16.96
            );
 
@@ -20,7 +28,8 @@ namespace Restaurant
                 5.96
             );
 
-            Menu NewMenu = new Menu(Pizza, CulversChickenFingers);
+            Menu NewMenu = new Menu(Pizza1, CulversChickenFingers);
+
 
             while (true)
             {
@@ -73,6 +82,11 @@ namespace Restaurant
  * Menu Items
  * 
  * Properties
- * name, description, price, newitem, category, 
+ * name, description, price, newitem, category
+ * a way to print a menu item
+ *   override the ToString method
+ * 
+ * Methods
+ * constructor
  * 
  */
